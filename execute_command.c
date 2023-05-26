@@ -15,7 +15,8 @@ int execute_command(char **array)
 		status = execute_builtin_env(array);
 
 		return (status);
-	}
+	} 
+	 
 	 if (_strcmp(array[0], "exit") == 0)
 	 { 
 		 free(array);

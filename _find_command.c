@@ -44,6 +44,14 @@ int find_command(char **array)
                 free(path_env_copy);
                 return (0);
             }
+            else
+            {
+             free(path_env_copy);
+                return (1);
+            }
+        
+            
+            
         }
         else{
             free(path);

@@ -22,7 +22,7 @@ char *read_line(void)
         if (line[0] == '\n')
         {
           free(line);
-          exit(1);
+          return (NULL);
         }
         else
         {
@@ -31,7 +31,10 @@ char *read_line(void)
             line[nread - 1] = '\0';
             --nread;
           }
+
+           
           return (line);
         }
-        
+       
+      return (NULL); 
 }
