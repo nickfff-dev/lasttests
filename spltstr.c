@@ -20,7 +20,8 @@ char **spltstr(char *str)
     count = count_words(str);
     lstn = (char **)malloc(sizeof(char *) * (count + 1));       
     if (lstn == NULL)
-    {
+    {      
+         free(lstn);
          return (NULL);
     }
     for (i = 0, j = 0; i < count; i++, j++)
