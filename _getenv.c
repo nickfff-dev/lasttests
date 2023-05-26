@@ -21,6 +21,11 @@ char *_getenv( char *name)
         if (_strncmp(env_name, name, len) == 0)
         {
             return (env_value + 1);
-        }
+        } 
+          
+
+         
     }
+
+    return (NULL);
 }
