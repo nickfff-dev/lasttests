@@ -2,11 +2,11 @@
 
 char *_getenv( char *name)
 {
-    int i;
-    int len;
-    char *env;
-    char *env_name;
-    char *env_value;
+    int i = 0;
+    int len = 0;
+    char *env = NULL;
+    char *env_name = NULL;
+    char *env_value = NULL;
 
     len = _strlen(name);
     for (i = 0; environ[i] != NULL; i++)

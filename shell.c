@@ -17,14 +17,14 @@ int main(void)
 		{
 			perror("Error");
 			free(line);
-			free(array);
+			
 			continue;
 		}
 		status = execute_command(array);
 		if (status == 1)
 		{
 			perror("Error");
-			free(array);
+			
 			free(line);
 			continue;
 		}

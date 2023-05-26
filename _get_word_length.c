@@ -8,7 +8,8 @@
  */
 int get_word_length(char *str, int start)
 {
-    int i, length = 0;
+    int i = 0;
+    int length = 0;
 
     for (i = start; str[i] != ' ' && str[i] != '\0'; i++)
         length++;

@@ -7,7 +7,8 @@
 int execute_builtin_command(char **array)
 {
     char **env;
-    int i, j;
+    int i = 0;
+    int j = 0;
 
 	if (_strcmp(array[0], "exit") == 0)
 	{

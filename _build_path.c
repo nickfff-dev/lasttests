@@ -8,16 +8,20 @@
  */
 char *build_path(char *token, char *command)
 {
-    char *path;
+    char *path = NULL;
+    int token_len = _strlen(token);
+    int command_len = _strlen(command);
 
-    path = malloc(sizeof(char) * (_strlen(token) + _strlen(command) + 2));
+    path = malloc(sizeof(char) * (token_len + command_len + 2));
     if (path == NULL)
     {
         perror("Error");
         exit(1);
     }
+
     path = _strcat(path, token);
     path = _strcat(path, "/");
     path = _strcat(path, command);
+
     return (path);
 }

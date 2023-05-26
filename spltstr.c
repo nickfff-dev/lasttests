@@ -6,7 +6,10 @@
  */
 char **spltstr(char *str)
 {
-    int i, j, k, count = count_words(str);
+    int i = 0;
+    int j = 0; 
+    int k = 0;
+    int count = count_words(str);
     char **array = malloc(sizeof(char *) * (count + 1));
 
     if (array == NULL)

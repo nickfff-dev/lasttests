@@ -4,8 +4,8 @@ char * _strdup(char *str)
 {
    
         char *dup;
-        int i;
-        int len;
+        int i = 0;
+        int len = 0;
         
         len = _strlen(str);
         dup = malloc(sizeof(char) * (len + 1));
