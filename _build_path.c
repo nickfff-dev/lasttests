@@ -8,7 +8,7 @@
  */
 char *build_path(char *token, char *command)
 {
-    char *path = NULL;
+    char *path;
     int token_len = 0;
     int command_len = 0;
 

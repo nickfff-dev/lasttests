@@ -7,10 +7,10 @@
 char **spltstr(char *str)
 {
     int i = 0;
-    int j = 0; 
+    int j = 0;
     int k = 0;
     int count = 0;
-    char **array = NULL;
+    char **array;
     
     if (str == NULL || *str == '\0')
     {
@@ -25,7 +25,9 @@ char **spltstr(char *str)
     for (i = 0, j = 0; i < count; i++, j++)
     {
         while (str[j] == ' ')
-            j++;
+         {   
+                j++;
+         }
         array[i] = (char *)malloc(sizeof(char) * (get_word_length(str, j) + 1));
         if (array[i] == NULL)
         {
@@ -34,12 +36,13 @@ char **spltstr(char *str)
                         free(array[i]);
                 }
                 free(array);
-                perror("Error");
                 return (NULL);
     
         }
         for (k = 0; str[j] != ' ' && str[j] != '\0'; j++, k++)
-            array[i][k] = str[j];
+           { 
+                array[i][k] = str[j];
+           }
         array[i][k] = '\0';
     }
     array[i] = NULL;
