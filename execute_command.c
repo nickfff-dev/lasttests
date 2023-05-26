@@ -4,7 +4,7 @@ int execute_command(char **array)
 {
 	int status = 0;
 	
-	if (execute_builtin(array) == 0)
+	if (execute_builtin_command(array) == 0)
 	{
 		return (0);
 	}
