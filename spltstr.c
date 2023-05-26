@@ -1,41 +1,33 @@
 #include "main.h"
-
+/**
+ * split_string - splits a string into an array of words
+ * @str: the string to split
+ * Return: an array of words
+ */
 char **spltstr(char *str)
 {
-        char **array;
-        int i, j, k, l, words = 0, len = 0;
+    int i, j, k, count = count_words(str);
+    char **array = malloc(sizeof(char *) * (count + 1));
 
-        if (str == NULL || *str == '\0')
-                return (NULL);
-
-        for (i = 0; str[i]; i++)
-                len++;
-
-        array = (char **)malloc(sizeof(char *) * (len + 1));
-        if (array == NULL)
-                return (NULL);
-
-        for (i = 0; str[i]; i++)
+    if (array == NULL)
+    {
+        perror("Error");
+        exit(1);
+    }
+    for (i = 0, j = 0; i < count; i++, j++)
+    {
+        while (str[j] == ' ')
+            j++;
+        array[i] = malloc(sizeof(char) * (get_word_length(str, j) + 1));
+        if (array[i] == NULL)
         {
-                if (str[i] != ' ')
-                {
-                        for (j = i; str[j] && str[j] != ' '; j++)
-                                ;
-                        array[words] = (char *)malloc(sizeof(char) * (j - i + 1));
-                        if (array[words] == NULL)
-                        {
-                                for (k = 0; k < words; k++)
-                                        free(array[k]);
-                                free(array);
-                                return (NULL);
-                        }
-                        for (l = 0; l < j - i; l++)
-                                array[words][l] = str[i + l];
-                        array[words][l] = '\0';
-                        words++;
-                        i = j;
-                }
+            perror("Error");
+            exit(1);
         }
-        array[words] = NULL;
-        return (array);
+        for (k = 0; str[j] != ' ' && str[j] != '\0'; j++, k++)
+            array[i][k] = str[j];
+        array[i][k] = '\0';
+    }
+    array[i] = NULL;
+    return (array);
 }
