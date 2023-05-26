@@ -30,6 +30,13 @@ int find_command(char **array)
     while (token != NULL)
     {
         path = build_path(token, array[0]);
+
+        if (path == NULL)
+        {
+            free(path_env_copy);
+            return (1);
+        }
+
         if (stat(path, &st) == 0)
         {
             if (_runs_command(path, array) == 0)
