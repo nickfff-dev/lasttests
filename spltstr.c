@@ -1,26 +1,26 @@
 #include "main.h"
 /**
- * split_string - splits a string into an array of words
+ * split_string - splits a string into an lstn of words
  * @str: the string to split
- * Return: an array of words
+ * Return: an lstn of words
  */
 char **spltstr(char *str)
 {
     int i = 0;
     int j = 0;
     int k = 0;
+    int l = 0;
     int count = 0;
-    char **array = NULL;
+    char **lstn = NULL;
     
     if (str == NULL || *str == '\0')
     {
         return (NULL);
     }
     count = count_words(str);
-    array = malloc(sizeof(char *) * (count + 1));       
-    if (array == NULL)
+    lstn = (char **)malloc(sizeof(char *) * (count + 1));       
+    if (lstn == NULL)
     {
-         free(array);
          return (NULL);
     }
     for (i = 0, j = 0; i < count; i++, j++)
@@ -29,23 +29,22 @@ char **spltstr(char *str)
          {   
                 j++;
          }
-        array[i] = (char *)malloc(sizeof(char) * (get_word_length(str, j) + 1));
-        if (array[i] == NULL)
+        lstn[i] = (char *)malloc(sizeof(char) * (get_word_length(str, j) + 1));
+        if (lstn[i] == NULL)
         {
-            for (i--; i >= 0; i--)
-                {
-                        free(array[i]);
-                }
-                free(array);
-                return (NULL);
-    
+            for (l = 0; l < i; l++)
+            {
+                free(lstn[l]);
+            }
+            free(lstn);
+            return (NULL);   
         }
         for (k = 0; str[j] != ' ' && str[j] != '\0'; j++, k++)
            { 
-                array[i][k] = str[j];
+                lstn[i][k] = str[j];
            }
-        array[i][k] = '\0';
+        lstn[i][k] = '\0';
     }
-    array[i] = NULL;
-    return (array);
+    lstn[i] = NULL;
+    return (lstn);
 }
