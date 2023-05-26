@@ -15,7 +15,17 @@ int find_command(char **array)
     
     
     path_env = get_path_env();
+    if (path_env == NULL)
+	{
+		perror("Error");
+		return (1);
+	}
     path_env_copy = _strdup(path_env);
+    if (path_env_copy == NULL)
+	{
+		perror("Error");
+		return (1);
+	}
     token = strtok(path_env_copy, ":");
     while (token != NULL)
     {
@@ -24,6 +34,8 @@ int find_command(char **array)
         {
             if (_runs_command(path, array) == 0)
             {
+                free(path_env_copy);
+                free(path);
                 return (0);
             }
         }

@@ -14,10 +14,10 @@ int main(void)
 		line = read_line();
 		array = spltstr(line);
 		if (array[0] == NULL)
-		{
+		{  
 			perror("Error");
 			free(line);
-			
+			free(array);
 			continue;
 		}
 		status = execute_command(array);

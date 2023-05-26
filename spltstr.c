@@ -9,19 +9,24 @@ char **spltstr(char *str)
     int i = 0;
     int j = 0; 
     int k = 0;
-    int count = count_words(str);
-    char **array = malloc(sizeof(char *) * (count + 1));
-
+    int count = 0;
+    char **array = NULL;
+    
+    if (str == NULL || *str == '\0')
+    {
+        return (NULL);
+    }
+    count = count_words(str);
+    array = (char **)malloc(sizeof(char *) * (count + 1));       
     if (array == NULL)
     {
-        perror("Error");
-        exit(1);
+         return (NULL);
     }
     for (i = 0, j = 0; i < count; i++, j++)
     {
         while (str[j] == ' ')
             j++;
-        array[i] = malloc(sizeof(char) * (get_word_length(str, j) + 1));
+        array[i] = (char *)malloc(sizeof(char) * (get_word_length(str, j) + 1));
         if (array[i] == NULL)
         {
             for (i--; i >= 0; i--)

@@ -17,14 +17,16 @@ int execute_external_command(char **array)
             if (child_pid == -1)
             {
                 perror("Error");
-                exit(1);
+                free(array);
+                return (1);
             }
             if (child_pid == 0)
             {
                 if (execve(array[0], array, environ) == -1)
                 {
                     perror("Error");
-                    exit(1);
+                    free(array);
+                    return (1);
                 }
             }
             else
