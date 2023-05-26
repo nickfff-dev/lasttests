@@ -27,7 +27,6 @@ int find_command(char **array)
                 return (0);
             }
         }
-        free(path_env_copy);
         free(path);
         token = strtok(NULL, ":");     
     }

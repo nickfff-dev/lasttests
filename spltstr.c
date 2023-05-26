@@ -30,7 +30,7 @@ char **spltstr(char *str)
                 }
                 free(array);
                 perror("Error");
-                exit(1);
+                return (NULL);
     
         }
         for (k = 0; str[j] != ' ' && str[j] != '\0'; j++, k++)
