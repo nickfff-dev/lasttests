@@ -23,5 +23,4 @@ char *_getenv( char *name)
             return (env_value + 1);
         }
     }
-    return (NULL);
 }
