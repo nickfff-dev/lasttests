@@ -33,6 +33,5 @@ char *build_path(char *token, char *command)
         free(command);
         return (NULL);
     }
-    free(command);
     return (path);
 }
