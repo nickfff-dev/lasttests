@@ -12,7 +12,7 @@ int main(void)
 	{
 		printf("$ ");
 		line = read_line();
-		
+		array = spltstr(line);
 		if (array[0] == NULL)
 		{  
 			perror("Error");
@@ -20,7 +20,7 @@ int main(void)
 			free(array);
 			continue;
 		}
-		array = spltstr(line);
+		
 		status = execute_command(array);
 		if (status == 1)
 		{
