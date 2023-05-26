@@ -21,14 +21,12 @@ int _runs_command(char *path, char **array)
         if (execve(path, array, environ) == -1)
         {
             perror("Error");
-            exit(1);
+            return (1);
         }
     }
     else
     {
         wait(&status);
-        free(array);
-        free(path);
         return (0);
     }
     return (1);

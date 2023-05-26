@@ -12,6 +12,10 @@ int main(void)
 	{
 		printf("$ ");
 		line = read_line();
+		if (line == NULL)
+		{
+			continue;
+		}
 		array = spltstr(line);
 		if (array[0] == NULL)
 		{  
@@ -27,8 +31,16 @@ int main(void)
 			perror("Error");
 			
 			free(line);
+			free(array);
 			continue;
 		}
+
+		free(line);
+		free(array);
+		
+		 
+
+	
 	}
 	return (0);
 }

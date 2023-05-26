@@ -10,8 +10,8 @@ int execute_path_commands(char **array)
 {
     if (find_command(array) == 0)
     { 
+        
 		return (0);
 	}
-    free(array);
     return (1);
 }
