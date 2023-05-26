@@ -24,6 +24,8 @@ int find_command(char **array)
     if (path_env_copy == NULL)
 	{
 		perror("Error");
+
+        free(path_env_copy);
 		return (1);
 	}
     token = strtok(path_env_copy, ":");

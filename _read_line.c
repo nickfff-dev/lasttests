@@ -35,6 +35,7 @@ char *read_line(void)
            
           return (line);
         }
-       
+      
+      free(line);
       return (NULL); 
 }

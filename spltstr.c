@@ -10,14 +10,13 @@ char **spltstr(char *str)
     int j = 0;
     int k = 0;
     int count = 0;
-    char **array;
     
     if (str == NULL || *str == '\0')
     {
         return (NULL);
     }
     count = count_words(str);
-    array = (char **)malloc(sizeof(char *) * (count + 1));       
+    char **array = malloc(sizeof(char *) * (count + 1));       
     if (array == NULL)
     {
          return (NULL);

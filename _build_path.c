@@ -30,8 +30,9 @@ char *build_path(char *token, char *command)
     if (path == NULL)
     {
         free(path);
+        free(command);
         return (NULL);
     }
-
+    free(command);
     return (path);
 }
