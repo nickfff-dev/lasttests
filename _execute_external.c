@@ -11,8 +11,6 @@ int execute_external_command(char **array)
     pid_t child_pid;
     struct stat st;
 
-    if (array[0][0] == '/')
-    {
         if (stat(array[0], &st) == 0)
         {
             child_pid = fork();
@@ -36,10 +34,7 @@ int execute_external_command(char **array)
                 return (0);
             }
         }
-        else
-        {
+            free(array);
             return (1);
-        }
-    }
-    return (1);
+  
 }

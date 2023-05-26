@@ -4,19 +4,14 @@
  * @array: array of arguments
  * Return: 0 on success, 1 on failure
  */
-int execute_builtin_command(char **array)
+int execute_builtin_env(char **array)
 {
     char **env;
     int i = 0;
     int j = 0;
 
-	if (_strcmp(array[0], "exit") == 0)
-	{
-		free(array);
-		exit(0);
-	}
-	if (_strcmp(array[0], "env") == 0)
-	{
+	
+	
 		env = environ;
 		for (i = 0; env[i] != NULL; i++)
 		{
@@ -28,6 +23,5 @@ int execute_builtin_command(char **array)
 		}
 		free(array);
 		return (0);
-	}
-    return (1);
+	
 }
