@@ -6,7 +6,7 @@
  * @command: command to execute
  * Return: path to the command
  */
-char *build_path(char *token, char **command)
+char *build_path(char *token, char *command)
 {
     char *path = NULL;
     int token_len = 0;
