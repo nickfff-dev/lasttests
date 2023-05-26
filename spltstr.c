@@ -24,8 +24,14 @@ char **spltstr(char *str)
         array[i] = malloc(sizeof(char) * (get_word_length(str, j) + 1));
         if (array[i] == NULL)
         {
-            perror("Error");
-            exit(1);
+            for (i--; i >= 0; i--)
+                {
+                        free(array[i]);
+                }
+                free(array);
+                perror("Error");
+                exit(1);
+    
         }
         for (k = 0; str[j] != ' ' && str[j] != '\0'; j++, k++)
             array[i][k] = str[j];

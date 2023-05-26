@@ -15,6 +15,7 @@ char *read_line(void)
         if (nread == -1)
         {
           perror("Error");
+          free(line);
           exit(1);
         }
 

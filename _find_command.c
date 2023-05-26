@@ -12,7 +12,8 @@ int find_command(char **array)
     char *token = NULL;
     char *path = NULL;
     struct stat st;
-
+    
+    
     path_env = get_path_env();
     path_env_copy = _strdup(path_env);
     token = strtok(path_env_copy, ":");
@@ -26,6 +27,7 @@ int find_command(char **array)
                 return (0);
             }
         }
+        free(path_env_copy);
         free(path);
         token = strtok(NULL, ":");     
     }
