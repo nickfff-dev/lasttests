@@ -13,7 +13,7 @@ char *get_path_env(void)
     if (path_env == NULL)
     {
         perror("Error");
-        exit(1);
+        return (NULL);
     }
     return (path_env);
 }

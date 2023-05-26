@@ -6,18 +6,20 @@
  * @command: command to execute
  * Return: path to the command
  */
-char *build_path(char *token, char *command)
+char *build_path(char *token, char **array)
 {
-    char *path;
+    char *path = NULL;
     int token_len = 0;
     int command_len = 0;
+
 
     token_len = _strlen(token);
     command_len = _strlen(command);
 
     path = (char *)malloc(sizeof(char) * (token_len + command_len + 2));
     if (path == NULL)
-    {
+    {   
+
         return (NULL);
     }
 

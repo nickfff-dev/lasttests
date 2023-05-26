@@ -9,19 +9,16 @@ int execute_builtin_env(char **array)
     char **env;
     int i = 0;
     int j = 0;
-
-	
-	
-		env = environ;
-		for (i = 0; env[i] != NULL; i++)
+	env = environ;
+	for (i = 0; env[i] != NULL; i++)
+	{
+		for (j = 0; env[i][j] != '\0'; j++)
 		{
-			for (j = 0; env[i][j] != '\0'; j++)
-			{
-				_putchar(env[i][j]);
-			}
-			_putchar('\n');
+			_putchar(env[i][j]);
 		}
-		free(array);
-		return (0);
+		_putchar('\n');
+	}
+	free(array);
+	return (0);
 	
 }
