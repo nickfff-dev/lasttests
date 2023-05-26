@@ -19,7 +19,7 @@ char *build_path(char *token, char *command)
     path = malloc(sizeof(char) * (token_len + command_len + 2));
     if (path == NULL)
     {   
-        
+        free(path);
         return (NULL);
     }
 

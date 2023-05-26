@@ -55,11 +55,11 @@ int find_command(char **array)
                 return (1);
             }
         }
-        else{
+        
             free(path);
             token = strtok(NULL, ":");   
             continue;
-        }  
+        }
     }
     free(path_env_copy);
   
