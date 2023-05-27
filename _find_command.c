@@ -50,7 +50,7 @@ int find_command(char **array)
             else
             {
              free(path_env_copy);
-                free(path);
+                
                 return (1);
             }
         }
