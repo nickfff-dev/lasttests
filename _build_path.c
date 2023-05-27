@@ -11,9 +11,9 @@ char *build_path(char *token, char *command)
    
     int token_len = _strlen(token);
     int command_len = _strlen(command);
-    char *path;
+    char *path  = malloc(sizeof(char) * (token_len + command_len + 2));
 
-    path = malloc(sizeof(char) * (token_len + command_len + 2));
+
 
     if (path == NULL)
     {   

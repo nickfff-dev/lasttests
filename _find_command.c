@@ -44,7 +44,7 @@ int find_command(char **array)
             if (_runs_command(path, array) == 0)
             {
                 free(path_env_copy);
-                free(path);
+                
                 return (0);
             }
             else
