@@ -7,13 +7,13 @@
 
 int find_command(char **array)
 {
-    char *path_env = get_path_env();
+    char *path_env = NULL;
     char *path_env_copy = NULL;
     char *token = NULL;
     char *path = NULL;
     struct stat st;
     
-  
+    path_env = _getenv("PATH");
     if (path_env == NULL)
 	{
 		perror("Error");

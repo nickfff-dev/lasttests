@@ -7,7 +7,7 @@
 
 char *get_path_env(void)
 {
-    char *path_env = NULL;;
+    char *path_env = NULL;
 
     path_env = getenv("PATH");
     if (path_env == NULL)
