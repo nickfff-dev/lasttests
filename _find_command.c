@@ -59,7 +59,7 @@ int find_command(char **array)
             free(path);
             token = strtok(NULL, ":");   
             continue;
-        }
+        
     }
     free(path_env_copy);
   
